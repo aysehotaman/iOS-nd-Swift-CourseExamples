@@ -9,6 +9,7 @@ import UIKit
 
 class DetailsVC: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var characterImage: UIImageView!
     @IBOutlet weak var characterName: UILabel!
     @IBOutlet weak var characterAge: UILabel!
@@ -26,7 +27,18 @@ class DetailsVC: UIViewController {
         characterAge.text = selectedCharacter?.age
         characterGender.text = selectedCharacter?.gender
         characterSpecies.text = selectedCharacter?.species
-        characterImage.image = selectedCharacter?.image
+        
+        for i in 0..<selectedCharacter!.image.count {
+            let imageView = UIImageView()
+            imageView.image = selectedCharacter?.image[i]
+            imageView.contentMode = .scaleAspectFit
+            let x = self.scrollView.frame.width * CGFloat(i)
+            imageView.frame = CGRect(x: x, y: 0 , width: self.scrollView.frame.width, height: self.scrollView.frame.height)
+            
+            scrollView.contentSize.width = scrollView.frame.width * CGFloat(i + 1)
+            scrollView.addSubview(imageView)
+        }
+        
     }
 
 }

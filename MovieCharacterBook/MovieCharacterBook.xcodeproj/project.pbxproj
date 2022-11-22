@@ -99,8 +99,8 @@
 		5A451C3C291D7BDA00A1481A /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				5A451C28291D7B1800A1481A /* LaunchScreen.storyboard */,
 				5A451C37291D7B8200A1481A /* Main.storyboard */,
+				5A451C28291D7B1800A1481A /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
